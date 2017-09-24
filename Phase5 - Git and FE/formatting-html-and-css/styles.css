@@ -1,0 +1,48 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  background-color: #F6F6EF;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+header {
+  background-color: #FF6600;
+  font-family: 'Teko', serif;
+  color: white;
+  font-size: 1.7em;
+  letter-spacing: 0.075em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+h1 {
+  color: black;
+  display: inline-block;
+  font-size: 0.75em;
+  letter-spacing: normal;
+  padding: auto;
+  margin: 0 auto 0 22%;
+  text-align: center;
+}
+
+img {
+  height: 27.5%;
+  width: 27.5%;
+}
+
+.recipe-header h2 {
+  margin: 0.75em auto 0.6em auto;
+}
+
+.content {
+  padding-left: 0.75em;
+}
+
+h3 {
+  margin: 0.6em auto;
+}
+
+ol li {
+  text-indent: 0.3em;
+}

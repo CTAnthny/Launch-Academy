@@ -1,0 +1,7 @@
+
+  <h1>These are the players in the league in the <%= @position %> position</h1>
+  <ul>
+    <% @selected_players.each do |player| %>
+    <li><%= player.name %></li>
+    <% end %>
+  </ul>

@@ -1,0 +1,43 @@
+<h1>Create New Meetup</h1>
+
+<form action ="/meetups" method="post" id="new_meetup_form">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="meetup[title]" value="<%= @new_title %>">
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="meetup[description]" value="<%= @new_description %>"></textarea>
+  </div>
+
+  <div>
+    <label for="location">Location:</label>
+    <select id="location" name="meetup[location]">
+      <% Meetup::LOCATIONS.each do |location| %>
+        <% if @meetup.location = location %>
+          <option selected><%= location %></option>
+        <% else %>
+          <option><%= location %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <select id="category" name="meetup[category]">
+      <% Meetup::CATEGORIES.each do |category| %>
+        <% if @meetup.category = category %>
+          <option selected><%= category %></option>
+        <% else %>
+          <option><%= category %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <input type="submit" value="Create Meetup!">
+</form>
+
+<a href="/meetups">Back to all meetups</a>

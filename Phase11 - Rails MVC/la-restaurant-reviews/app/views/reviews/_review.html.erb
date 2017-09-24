@@ -1,0 +1,11 @@
+<% unless review.nil? %>
+  <div class="row">
+    <p class="rating">Rating: <%= review.rating %> </p>
+  </div>
+  <div class="row">
+    <p class="body">Review: <%= review.body %></p>
+  </div>
+  <div class="row">
+    <p class="crTime">Reviewed On: <%= review.created_at.strftime("%B %d %Y") %></p>
+  </div>
+<% end %>

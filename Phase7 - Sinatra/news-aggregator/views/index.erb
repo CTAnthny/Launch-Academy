@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Kickin' News Aggregator</title>
+</head>
+
+<body>
+  <h1>Articles Listing:</h1><br>
+  <% @articles.each_with_index do |article, index| %>
+    <h2>(<%= index + 1 %>) Title: <%= article[:title] %></h2><br>
+    <p>URL: <a href="<%= article[:url] %>"><%= article[:url] %></a><br>
+    Description: <%= article[:description] %></p><br>
+  <% end %>
+</body>
+</html>

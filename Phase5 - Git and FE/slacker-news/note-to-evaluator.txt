@@ -1,0 +1,9 @@
+Hola!
+
+This is just a note to let you know that I had problems getting the Sinatra setup to run correctly as per the exercise instructions. I talked to Ezra Skolnik about this and we agreed to just create a static html and css file (in the public folder).
+
+As a second note, the nav bar layout may not line up correctly if you are on a monitor with a resolution less than 1680 x 1050, as that is what I used to visually adjust the margin (see the nav selector in the css file). This was an imperfect solution, but I could not figure out a responsive way to make the nav ul sit next to the h1 header without manually adjusting the nav right margin.
+
+Cheers!
+
+Chris Anthony

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MMO Rock-Paper-Scissors!</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>MMORPS</h1>
+    </header>
+
+    <table>
+      <tr>
+        <td>Player</td>
+        <td>Score</td>
+      </tr>
+      <tr>
+        <td>Human</td>
+        <td> <%= session[:player_score] %> </td>
+      </tr>
+      <tr>
+        <td>Computer</td>
+        <td> <%= session[:computer_score] %> </td>
+      </tr>
+    </table>
+
+    <h2><%= session[:output] %></h2>
+
+    <% if !session[:final_output].nil? %>
+      <h2><%= session[:final_output]  %></h2>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

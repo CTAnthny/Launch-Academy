@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gimme A New Article</title>
+</head>
+
+<body>
+  <p><%= @error_message %></p>
+  <form action="/articles" method="post">
+    <div>
+      <label for="article_title">Title:</label>
+      <input type="text" id="article_title" name="title">
+    </div>
+
+    <div>
+      <label for="article_url">Article URL:</label>
+      <input type="text" id="article_url" name="url">
+    </div>
+
+    <div>
+      <label for="article_description">Description:</label>
+      <input type="textarea" id="article_description" name="description">
+      <input type="submit" value="Submit!"/>
+    </div>
+  </form>
+</body>
+</html>

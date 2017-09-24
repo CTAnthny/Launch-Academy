@@ -1,0 +1,11 @@
+<p>
+  <strong>Name:</strong>
+  <%= @camper.name %>
+</p>
+
+<p>
+  <strong>Campsite:</strong>
+  <%= @camper.campsite_id %>
+</p>
+
+<%= link_to "List of #{@camper.name}'s supplies", camper_supplies_path(@camper, @supply) %>

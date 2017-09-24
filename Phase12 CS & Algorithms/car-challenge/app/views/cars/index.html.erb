@@ -1,0 +1,13 @@
+<%= provide(:title, 'Cars Index') %>
+
+<% @cars.each do |car| %>
+  <div class="man">
+    <h2> <%= car.name %> </h2>
+    <div class="details">
+      <span><%= car.manufacturer.name %></span>
+      <span><%= car.year %></span>
+      <span><%= car.mileage %></span>
+      <span><%= car.color %></span>
+    </div>
+  </div>
+<% end %>

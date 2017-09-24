@@ -1,0 +1,7 @@
+
+  <h1>These are the positions in the league: </h1>
+  <ul>
+    <% @positions.each do |position| %>
+    <li><a href="/positions/<%= position %>"><%= position %></a></li>
+    <% end %>
+  </ul>

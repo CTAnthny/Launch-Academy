@@ -1,0 +1,27 @@
+<h1><%= @meetup.title %></h1>
+
+<dl>
+  <dt>Category: </dt>
+    <dd><%= @meetup.category %></dd>
+  <dt>Location: </dt>
+    <dd><%= @meetup.location %></dd>
+  <dt>Description: </dt>
+    <dd><%= @meetup.description %></dd>
+  <dt>Creator: </dt>
+    <dd><%= @meetup.creator.username %></dd>
+  <dt>Members: </dt>
+    <dd>
+      <dl>
+        <% @meetup.users.each do |member| %>
+          <dt><%= member.username %></dt>
+          <dd><%= member.avatar_url %></dd>
+        <% end %>
+      </dl>
+    </dd>
+</dl>
+
+<% if !@current_user || !@meetup.users.include?(@current_user) %>
+  <a href="/meetups/<%= @meetup.id %>/join">Join this meetup!</a>
+<% end %>
+
+<a href="/meetups">Back to all meetups</a>

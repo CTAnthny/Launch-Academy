@@ -1,0 +1,17 @@
+<% unless comment.nil? %>
+  <div class="row">
+    <p class="desc"><%= comment.description %></p>
+  </div>
+
+  <div class="row">
+    <span class="postee"><%= show_postee(comment.user_id) %></span>
+    <span class="crtd_at"><%= comment.created_at %></span>
+  </div>
+
+  <% if current_user.id == comment.user_id %>
+    <div class="row">
+      <%= link_to 'Edit Review', edit_comment_path(comment) %>
+      <%= link_to 'Delete Review', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+<% end %>

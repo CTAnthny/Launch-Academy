@@ -1,0 +1,25 @@
+<%= provide(:title, "Car #{@car.name} #{@car.year} Info") %>
+
+<div class="row">
+  <h1><%= @car.name %></h1>
+</div>
+
+<div class="row">
+  <p><%= @car.manufacturer.name %></p>
+</div>
+
+<div class="row">
+  <p><%= @car.year %></p>
+</div>
+
+<div class="row">
+  <p><%= @car.mileage %></p>
+</div>
+
+<div class="row">
+  <p><%= @car.color %></p>
+</div>
+
+<div class="row">
+  <p><%= @car.description %></p>
+</div>

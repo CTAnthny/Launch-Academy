@@ -1,0 +1,23 @@
+<h1><%= @planet.name %></h1>
+
+<div>
+  Mass: <%= @planet.mass_in_kg %> kg
+</div>
+
+<div>
+  Description: <%= @planet.description %>
+</div>
+
+<h2>New Review</h2>
+
+<%= form_for @review do |f| %>
+  <%= f.label :rating %>
+  <%= f.collection_select :rating, Review::RATINGS, :to_s, :to_s %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.hidden_field :planet_id, value: @planet.id %>
+
+  <%= f.submit %>
+<% end %>

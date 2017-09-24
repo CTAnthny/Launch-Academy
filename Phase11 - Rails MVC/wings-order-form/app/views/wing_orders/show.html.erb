@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wing_order.customer_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @wing_order.city + ", " + @wing_order.state %>
+</p>
+
+<%= link_to 'Back', wing_orders_path %>

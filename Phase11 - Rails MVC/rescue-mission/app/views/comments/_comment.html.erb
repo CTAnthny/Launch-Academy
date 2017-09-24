@@ -1,0 +1,15 @@
+<% if comment.id %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p class="created_at">Created:
+    <%= comment.created_at %>
+  </p>
+<% end %>

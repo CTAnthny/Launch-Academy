@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlanetReviews</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">PlanetReviews</a></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <% if current_user %>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'GitHub', user_omniauth_authorize_path(:github) %>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+
+  <% flash.each do |type, message| %>
+    <div data-alert class="alert-box <%= type %>">
+      <%= message %>
+      <%= link_to "x", "#", class: :close %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield :extra_footer %>
+</body>
+</html>

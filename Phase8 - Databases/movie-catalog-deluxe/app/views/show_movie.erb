@@ -1,0 +1,25 @@
+<h2><%= @movie_info[0]["title"] %></h2>
+
+  <ul>
+    <li> Year: <%= @movie_info[0]["year"] %> </li>
+    <% if !@movie_info[0]["synopsis"].nil? %>
+      <li> Synopsis: <%= @movie_info[0]["synopsis"] %> </li>
+    <% end %>
+    <li> Rating: <%= @movie_info[0]["rating"] %> </li>
+    <li> Genre: <%= @movie_info[0]["genre"] %> </li>
+    <li> Studio: <%= @movie_info[0]["studio"] %> </li>
+  </ul>
+
+  <table>
+    <caption> Characters/Actors List </caption>
+    <tr>
+      <th>Character</th>
+      <th>Actor</th>
+    </tr>
+    <% @cast_info.each do |cast_member| %>
+      <tr>
+        <td><%= cast_member["characters"] %></td>
+        <td><a href="/actors/<%= cast_member["id"] %>"><%= cast_member["actors"] %></a></td>
+      </tr>
+    <% end %>
+  </table>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Groceries</h1>
+    </header>
+
+    <% if !@groceries.nil? %>
+      <% @groceries.each do |item| %>
+        <ul>
+          <li> <%= item[:name] %> </li>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <form action="/groceries" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+      <button type="submit">Add</button>
+    </form>
+
+    <% if !@error_message == "" || !@error_message.nil? %>
+      <p><strong><%= @error_message %></strong></p>
+    <% end %>
+  </body>
+</html>

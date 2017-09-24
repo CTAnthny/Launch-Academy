@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div id="question-header">
+  <h1><%= @question.title %></h1>
+</div>
+
+<div class="question">
+  <p>
+    <strong>Description:</strong>
+    <%= @question.body %>
+  </p>
+</div>
+
+<div class="comments">
+  <h2>Comments</h2>
+  <%= render partial: @comment, collection: @comments %>
+</div>
+
+<div class="answers">
+  <h2>Answer Question</h2>
+  <%= render "comments/form", question: @question, comment: @comment %>
+</div>
+
+<%= link_to "Back", questions_path %>
+<%= link_to "Edit", edit_question_path(@question) %>
+<%= link_to "Delete", @question, method: :delete, data: { confirm: 'Are you sure?' } %>

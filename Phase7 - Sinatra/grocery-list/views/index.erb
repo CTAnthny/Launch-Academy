@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Groceries</h1>
+    </header>
+
+    <% if !@groceries.nil? || !@groceries == "" %>
+      <% @groceries.each do |item| %>
+        <ul>
+          <li><a href="#"><%= item[:name] %></a> - <%= item[:amount] %></li>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <form action="/groceries" method="post">
+      <label for="item_name">Name</label>
+      <input type="text" id="item_name" name="item_name" />
+
+      <label for="amount">How Many? (Max. 50)
+      <input type="number" id="amount" name="amount" min="1" max="50" />
+      </label>
+
+      <button type="submit">Add</button>
+    </form>
+
+    <% if !@error_message == "" || !@error_message.nil? %>
+      <p><strong><%= @error_message %></strong></p>
+    <% end %>
+  </body>
+</html>

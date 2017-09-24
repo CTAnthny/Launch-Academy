@@ -1,0 +1,33 @@
+<% if @planet.errors.any? %>
+  <h1>Errors when saving</h1>
+  <ul>
+  <% @planet.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @planet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :diameter_in_km %>
+  <%= f.text_field :diameter_in_km %>
+
+  <%= f.label :mass_in_kg %>
+  <%= f.text_field :mass_in_kg %>
+
+  <%= f.label :moons %>
+  <%= f.text_field :moons %>
+
+  <%= f.label :min_temp_in_c %>
+  <%= f.text_field :min_temp_in_c %>
+
+  <%= f.label :max_temp_in_c %>
+  <%= f.text_field :max_temp_in_c %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit "Create Planet" %>
+<% end %>

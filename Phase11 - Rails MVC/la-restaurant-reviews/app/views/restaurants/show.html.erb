@@ -1,0 +1,39 @@
+<%= provide(:title, "Restaurant #{@restaurant.name} Info") %>
+
+<div class="row">
+  <h1><%= @restaurant.name %></h1>
+</div>
+
+<div class="row">
+  <p><%= @restaurant.address %></p>
+</div>
+
+<div class="row">
+  <p><%= @restaurant.city %></p>
+</div>
+
+<div class="row">
+  <p><%= @restaurant.state %></p>
+</div>
+
+<div class="row">
+  <p><%= @restaurant.zip %></p>
+</div>
+
+<div class="row">
+  <p><%= @restaurant.description %></p>
+</div>
+
+<div class="row">
+  <div class="reviews">
+    <h2>Reviews</h2>
+    <%= render partial: @review, collection: @reviews %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="fLinks">
+    <%= link_to 'Add a Review', new_restaurant_review_path(@restaurant) %></br>
+    <%= link_to 'All Restaurants', restaurants_path %>
+  </div>
+</div>

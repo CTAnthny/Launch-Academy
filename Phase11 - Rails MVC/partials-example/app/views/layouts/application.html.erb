@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Movie Shack Hut" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <%= render "layouts/nav" %>
+
+    <!-- flash messages -->
+    <%= render "layouts/flash" %>
+
+    <!-- main content -->
+    <%= yield %>
+
+  </body>
+</html>

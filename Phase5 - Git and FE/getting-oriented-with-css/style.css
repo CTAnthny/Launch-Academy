@@ -1,0 +1,40 @@
+h1 { 
+font-size: 50px;
+font-style: italic;
+font-weight: bold;
+color: steelblue;
+}
+/* should be 50px, italic, bold, and the color "steelblue" */
+
+h2 {
+font-size: 40px;
+font-weight: normal;
+color: #674172;
+
+}
+/* should be 40px, a normal (not bold) font-weight, and the color "#674172" */
+
+h3 {
+font-size: 30px;
+font-style: bold;
+color: lightcoral
+}
+/* should be 30px, bold, and the color "lightcoral" */
+
+h4 {
+font-size: 25px;
+font-style: italic;
+font-weight: normal;
+color: #1BA39C;
+}
+/* should be 25px, italic, a normal (not bold) font-weight, and the color "#1BA39C" */
+
+a {
+color: #1E8BC3;
+}
+
+p {
+font-size: 16px;
+font-style: italic;
+color: mediumpurple;
+}

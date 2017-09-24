@@ -1,0 +1,18 @@
+<tr>
+   <td><%= wing_order.customer_name %></td>
+   <td><%= wing_order.city %></td>
+   <td><%= wing_order.state %></td>
+   <td><%= wing_order.quantity %></td>
+   
+   <!-- Ranch Dressing -->
+   <td><%= wing_order.ranch_dressing %></td>
+
+   <!-- Flavors -->
+   <% wing_order.flavors.each do |flavor| %>
+     <td><%= flavor.name %></td>
+   <% end %>
+
+   <td><%= link_to 'Show', wing_order %></td>
+   <td><%= link_to 'Edit', edit_wing_order_path(wing_order) %></td>
+   <td><%= link_to 'Destroy', wing_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

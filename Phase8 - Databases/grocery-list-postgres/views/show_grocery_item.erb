@@ -1,0 +1,9 @@
+<h2><%= @grocery_item_info[0]["name"] %></h2>
+<p>Comments: </p>
+<ul>
+  <% @grocery_item_info.each do |item| %>
+    <% unless item["comments"].nil? %>
+      <li><%= item["comments"] %></li>
+    <% end %>
+  <% end %>
+</ul>

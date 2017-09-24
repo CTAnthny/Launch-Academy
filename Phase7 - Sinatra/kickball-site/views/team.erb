@@ -1,0 +1,7 @@
+
+  <h1>Welcome to the <%= @team_name %> page!</h1>
+  <ul>
+    <% @players.each do |player| %>
+    <li> <%= player.name %> - <%= player.position %> </li>
+    <% end %>
+  </ul>

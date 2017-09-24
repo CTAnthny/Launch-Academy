@@ -1,0 +1,19 @@
+<h1>Grocery List</h1>
+
+<ul id="grocery-list">
+  <% @groceries.each do |item| %>
+    <li class="item">
+      <%= item['name'] %>
+        <form id="delete_grocery_item" action="/groceries/<%= item['id'] %>" method="post" data-id="<%= item['id'] %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+    </li>
+  <% end %>
+</ul>
+
+<form id="new_grocery_item" method="post" action="/groceries">
+  <label for="grocery_name">Name</label>
+  <input type="text" name="name" id="grocery_name">
+  <input type="submit" value="Add">
+</form>

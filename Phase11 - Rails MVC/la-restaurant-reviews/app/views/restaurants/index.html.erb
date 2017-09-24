@@ -1,0 +1,15 @@
+<%= provide(:title, 'Restaurants Index') %>
+
+<% @restaurants.each do |rest| %>
+  <div class="rest">
+    <h2><%= link_to rest.name, rest %></h2>
+    <div class="details">
+      <span><%= rest.address %></span>
+      <span><%= rest.city %></span>
+      <span><%= rest.state %></span>
+      <span><%= rest.zip %></span>
+    </div>
+  </div>
+<% end %>
+
+<br /><p><%= link_to "Add New Restaurant", new_restaurant_path %></p>

@@ -1,0 +1,8 @@
+<%= provide(:title, 'Manufacturers Index') %>
+
+<% @manufacturers.each do |man| %>
+  <div class="man">
+    <h2> <%= man.name %> </h2>
+    <h3> <%= man.country %> </h3>
+  </div>
+<% end %>

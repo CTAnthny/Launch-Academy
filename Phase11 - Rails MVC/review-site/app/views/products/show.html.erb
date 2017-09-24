@@ -1,0 +1,36 @@
+<%= provide(:title, "Product #{@product.name}") %>
+<%= stylesheet_link_tag "application", media: "all" %>
+
+<div class="row">
+  <h1><%= @product.name %> </h1>
+</div>
+
+<div class="row">
+  <p>Description: <%= @product.description %> </p>
+</div>
+
+<div class="row">
+  <p>Website: <%= @product.website %> </p>
+</div>
+
+<div class="row">
+  <p>Posted By: <%= show_postee(@product.user_id) %> </p>
+</div>
+
+<div class="row">
+  <p>Last Updated At: <%= @product.updated_at %> </p>
+</div>
+
+<div class="comments">
+  <h2>Add Review</h2>
+  <%= render "comments/form" %>
+</div>
+
+<div class="reviews">
+  <h2>Reviews</h2>
+  <%= render partial: @comment, collection: @comments %>
+</div>
+
+<%= link_to 'Edit Item', edit_product_path(@product) %>
+<%= link_to 'Delete Item', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'All Products', products_path %>
